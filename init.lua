@@ -1,3 +1,5 @@
+local caffeine = require 'caffeine'
+
 function reloadConfig(files)
     doReload = false
     for _,file in pairs(files) do
