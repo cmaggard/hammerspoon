@@ -1,4 +1,6 @@
 local caffeine = require 'caffeine'
+local locker = require 'locker'
+local muter = require 'muter'
 
 function reloadConfig(files)
     doReload = false
@@ -11,5 +13,7 @@ function reloadConfig(files)
         hs.reload()
     end
 end
+
 local myWatcher = hs.pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon/", reloadConfig):start()
+
 hs.alert.show("Config loaded")
